@@ -1,0 +1,31 @@
+/*  TEST STYLING*/
+
+.test {
+    border: 5px solid red;
+}
+
+
+/*  HEADER SECTION*/
+
+
+header {
+    margin-top: 5%;
+}
+
+header img {
+    height: auto;
+    width: 25%;
+
+}
+
+h1 {
+    /*color: red;*/
+}
+
+#main {
+
+}
+
+.main-buttons {
+    margin-top: 10px;
+}
