@@ -21,11 +21,41 @@
 
 
 
+//   if streams == null then user is offline
+
+
+
+//$.getJSON('https://api.twitch.tv/kraken/streams/' + YOUR_CHANNEL_NAME, function(channel) {
+//
+//    if (channel["stream"] == null) {
+//        //THEY ARE OFFLINE DO WHATEVER HERE
+//
+//    } else {
+//
+//        //THEY ARE ONLINE DO WHATEVER HERE
+//
+//    }
+//
+//
+//
+//});
+//
+
+
+
+//  https://api.jquery.com/jQuery.when/  RESEARCH
+
 (function Main(){
 
 
 
     var searchValue = document.getElementById("search-value");
+
+
+    //  List of twitch users
+
+    var twitchUsers = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb",
+        "noobs2ninjas"];
 
 
 
@@ -35,27 +65,38 @@
 
     //NEED TO RESEARCH MORE ABOUT JSONP AND CROSS SITE CALLS
 
-    var apiUrl = "https://wind-bow.gomix.me/twitch-api/users/freecodecamp";
+    var apiUrl = "https://wind-bow.gomix.me/twitch-api/streams/ESL_SC2";
+
+    var getData = "test";
 
     $.ajax({
 
         url: apiUrl,
-        dataType: 'jsonp',
-        jsonp: 'callback',
+        //type: "get",
+        //async: false,  // test this
+        dataType: "jsonp",
+        jsonp: "callback",
+        //data: {
+        //    action: 'opensearch',
+        //    search: "freecodecamp",
+        //    limit: 5,
+        //    format: 'json'},
         data: {
-            action: 'opensearch',
-            search: "freecodecamp",
-            limit: 5,
-            format: 'json'},
+            format: "json"
+        },
         success: function(response) {
 
             // Now you have search results!
             console.log(response);
-
+            getData = response;
             //searchResults(response);
 
         }
     });
+
+    console.log(getData);
+
+
 
 
     //var xhr = new XMLHttpRequest();
